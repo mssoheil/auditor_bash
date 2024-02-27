@@ -2,6 +2,7 @@
 
 # get user
 # check for existance
+
 # check password policies
 # check last login information
 # check account lock status
@@ -29,9 +30,15 @@ checkForExistance(){
 
 }
 
-checkForExistance $userId
+checkPasswordPolicies(){
+	ls
+	bash ./check_password_policies.sh
+	
+}
 
-echo "existance check finished"
+
+checkForExistance $userId
+checkPasswordPolicies
 
 
 
