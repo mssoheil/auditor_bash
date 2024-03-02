@@ -31,14 +31,17 @@ checkForExistance(){
 }
 
 checkPasswordPolicies(){
-	ls
 	bash ./check_password_policies.sh
 	
+}
+
+checkLastLoginInfo(){
+	bash ./last_login_info.sh
 }
 
 
 checkForExistance $userId
 checkPasswordPolicies
-
+checkLastLoginInfo $userId
 
 
