@@ -18,8 +18,6 @@
 
 read -p "enter userId: " userId
 
-echo "you entered $userId"
-
 checkForExistance(){
 	bash ./check_user_existance.sh $1
 	local result=$?
@@ -27,24 +25,26 @@ checkForExistance(){
 	if [[ $result != 1 ]]; then
 		exit 2
 	fi
-
 }
 
 checkPasswordPolicies(){
 	bash ./check_password_policies.sh
-	
 }
 
 checkLastLoginInfo(){
-	bash ./last_login_info.sh
+	bash ./last_login_info.sh $1
 }
 
 checkUserLockStatus(){
-	bash ./check_lock_status.sh
+	bash ./check_lock_status.sh $1
 }
 
 checkLoginLog(){
 	bash ./check_login_log.sh
+}
+
+checkUserAccountExpirationInfo(){
+	bash ./check_user_account_expiration.sh $1
 }
 
 checkForExistance $userId
@@ -52,4 +52,9 @@ checkPasswordPolicies
 checkLastLoginInfo $userId
 checkUserLockStatus $userId
 checkLoginLog
+checkUserAccountExpirationInfo $userId
+
+
+
+
 
