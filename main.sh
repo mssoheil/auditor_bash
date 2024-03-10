@@ -39,9 +39,13 @@ checkLastLoginInfo(){
 	bash ./last_login_info.sh
 }
 
+checkUserLockStatus(){
+	bash ./check_lock_status.sh
+}
+
 
 checkForExistance $userId
 checkPasswordPolicies
 checkLastLoginInfo $userId
-
+checkUserLockStatus $userId
 
