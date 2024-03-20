@@ -47,14 +47,23 @@ checkUserAccountExpirationInfo(){
 	bash ./check_user_account_expiration.sh $1
 }
 
+checkGroupMembership(){
+	bash ./check_user_membership.sh $1
+}
+
+checkUserSudoPrivileges(){
+	bash ./check_user_sudo_privileges.sh $1
+}
+
+
 checkForExistance $userId
 checkPasswordPolicies
 checkLastLoginInfo $userId
 checkUserLockStatus $userId
 checkLoginLog
 checkUserAccountExpirationInfo $userId
-
-
+checkGroupMembership $userId
+checkUserSudoPrivileges $userId
 
 
 
