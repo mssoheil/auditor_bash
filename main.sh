@@ -55,6 +55,10 @@ checkUserSudoPrivileges(){
 	bash ./check_user_sudo_privileges.sh $1
 }
 
+checkHomeDirectoryPermissions() {
+	bash ./check_home_directory_permission.sh $1
+}
+
 
 checkForExistance $userId
 checkPasswordPolicies
@@ -64,6 +68,6 @@ checkLoginLog
 checkUserAccountExpirationInfo $userId
 checkGroupMembership $userId
 checkUserSudoPrivileges $userId
-
+checkHomeDirectoryPermissions $userId
 
 
