@@ -6,7 +6,7 @@ checkHomeDirectoryPermissions(){
         printf "$GREEN --- User $1 home directory permissions ---"
         printf "$NO_COLOR \n"
 
-        ls -ld "/home/$1"
+        sudo ls -ld "/home/$1"
 }
 
 checkHomeDirectoryPermissions $1

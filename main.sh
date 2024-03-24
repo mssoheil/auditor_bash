@@ -55,10 +55,13 @@ checkUserSudoPrivileges(){
 	bash ./check_user_sudo_privileges.sh $1
 }
 
-checkHomeDirectoryPermissions() {
+checkHomeDirectoryPermissions(){
 	bash ./check_home_directory_permission.sh $1
 }
 
+checkNetworkServices(){
+	bash ./check_network_services.sh $1
+}
 
 checkForExistance $userId
 checkPasswordPolicies
@@ -69,5 +72,5 @@ checkUserAccountExpirationInfo $userId
 checkGroupMembership $userId
 checkUserSudoPrivileges $userId
 checkHomeDirectoryPermissions $userId
-
+checkNetworkServices $userId
 
