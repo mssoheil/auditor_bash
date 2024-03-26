@@ -12,7 +12,6 @@
 # check for sudo privileges
 # check for network services
 # user home directory permissions
-# check whether the account is using ssh key authentication instead of password
 # check for permission of sensitive files
 # save logs to a file
 
@@ -63,6 +62,10 @@ checkNetworkServices(){
 	bash ./check_network_services.sh $1
 }
 
+checkSensitiveFilesPermissions(){
+	bash ./check_sensitive_files_permissions.sh $1
+}
+
 checkForExistance $userId
 checkPasswordPolicies
 checkLastLoginInfo $userId
@@ -73,4 +76,5 @@ checkGroupMembership $userId
 checkUserSudoPrivileges $userId
 checkHomeDirectoryPermissions $userId
 checkNetworkServices $userId
+checkSensitiveFilesPermissions $userId
 
