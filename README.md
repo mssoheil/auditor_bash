@@ -1,1 +1,1 @@
-# auditor_bash
+# linux auditor bash script
