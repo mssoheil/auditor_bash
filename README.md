@@ -1,6 +1,6 @@
 # Auditor Bash Script
 
-## A collection of shell scripts designed to perform security audits on Linux systems. 
+#### A collection of shell scripts designed to perform security audits on Linux systems. 
 
 ### Features
 - Audit user accounts, sudo privileges, and group memberships
